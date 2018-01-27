@@ -1,0 +1,16 @@
+
+
+For the output, MPI_Gatherv was used instead of MPI_Gather, in order to account for variable local domain sizes in the case when the number of points is not divisible by the number of proceses. The root rank was 0, which is the process that outputs the data.
+
+The two data files, one corresponding to serial output, and the other corresponding to parallel output with MPI on 8 processes, was compared with ediff command on emacs, and were found to be identical. I also plotted the two data Files, and the plots (8ProcessRun.png and SerialRun.png) are identical too.
+
+The weak scaling test fixes the amount of work per processor and compares the execution time over number of processors. The number of points along x-axis in each case is multiplied by the number of MPI processes to keep the load per processor fixed. Since each processor has the same amount to do, in the ideal case the execution time should remain constant. But the plot shows this is clearly not true. The time increases with number of processes pretty fast (much faster than linearly). This implies that the parallel overhead varies faster than the amount of work. The reason can be attributed to increased MPI communication costs when number of processes are larger. (note that weakScaling.sh takes different input files, diffuseparams1.txt, diffuseparams2.txt, etc in which the # of points have been changed to match # of threads).
+
+Next, the code is hybridised with openMP. The first plot is that of time for a given fixed number of threads per process (1,2,4,8) versus the number of MPI processes. The next plot is the scaling plot, wherein I have plotted time on the vertical axis versus the total number of cores on the x-axis. Both the plots suggest that overall increasing number of threads leads to better performance on an average. 
+
+The best combination of threads and processes leading to least execution time from my data is that of a single MPI process spawning over 8 threads. The first plot suggests that except for the case of just 1 thread per process, the minimum time corresponds to using only one MPI process for a fixed number of threads per process. Increasing number of MPI processes beyond a certain stage only leads to slower execution, and this ccan be attributed to increased MPI communication costs. There is also visible a local minimum of time when number of MPI processes is 4, which might correspond to the regime of communication and I/O costs outweighing benifits of parallelization. Overall there is a sense of higher worth for increasing number of threads over number of MPI processes , for a given (large) number of total cores.
+
+
+
+
+

@@ -1,0 +1,19 @@
+-12.0
+12.0
+1.0
+6144
+34.0
+34.0
+0.16
+1.0
+data.dat
+#The above parameters are interpreted by 'diffuse' as (in this specific order):
+#1 x1         left most x value
+#2 x2         right most x value
+#3 D          the diffusion constant
+#4 numPoints  number of points along the x axis
+#5 runtime    how long to simulate
+#6 outtime    how often to output a snapshot
+#7 a0         the initial amplitude of the diffusing field
+#8 sigma0     the initial spread of the diffusing field
+#9 filename   name of the file to contain the evolving diffusing field

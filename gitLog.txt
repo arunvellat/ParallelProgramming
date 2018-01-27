@@ -1,0 +1,29 @@
+commit 3c0dfdef58a92c8528992f3ea3a1ffae96b420ed
+Author: Guest course account <guest037@gpc-f101n084-ib0.(none)>
+Date:   Mon May 4 18:57:42 2015 -0400
+
+    completed strong scaling analysis on hybrid code
+
+commit 703f9a819939532a9de2b47d60698493479602c9
+Author: Guest course account <guest037@gpc-f101n084-ib0.(none)>
+Date:   Mon May 4 15:24:33 2015 -0400
+
+    added openMpi, and corrected omp to be ordered for the output loop
+
+commit cb507f15d259ecf6daed72da4a6964a7b0a21f32
+Author: Guest course account <guest037@gpc-f101n084-ib0.(none)>
+Date:   Sun May 3 10:59:00 2015 -0400
+
+    Completed output
+
+commit 06cdac85fdcf9b849a067c09acd453420f5b004e
+Author: Guest course account <guest037@gpc-f101n084-ib0.(none)>
+Date:   Tue Apr 28 18:28:43 2015 -0400
+
+    Added mpi. need to still include mc++ in makefile
+
+commit d2f5e4fcabb94ca5d70ac787b98a72a9a78a6b74
+Author: Guest course account <guest037@scinet04-ib0.(none)>
+Date:   Wed Apr 22 11:22:21 2015 -0400
+
+    Added all given files to directory
